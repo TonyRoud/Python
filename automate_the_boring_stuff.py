@@ -1,7 +1,7 @@
 """ Notes and examples from 'automate the boring stuff'
 """
 
-spam = ['jobbies','babysick','catpiss','an old man`s toenails']
+spam = ['ham','eggs','chips','bacon']
 message = ""
 
 for x in range(0, (len(spam) - 1)):
@@ -44,7 +44,7 @@ for k in spam.keys():
 
 import pprint
 
-message = 'Fuck you, you complete and utter bag of cat piss. The thought of simply having to look at your face fills me with such existential dread, that I would consider gouging out my eyeballs to avoid it'
+message = 'Listen here you litte'
 
 count = {}
 
