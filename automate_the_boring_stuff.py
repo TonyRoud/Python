@@ -1,4 +1,4 @@
-""" Notes and examples from 'automate the boring stuff'
+""" Notes and excercises from 'automate the boring stuff'
 """
 
 spam = ['ham','eggs','chips','bacon']
@@ -69,7 +69,7 @@ def printBoard(board):
 
 turn = 'X'
 
-for i in range(9):
+for i in range(12):
     printBoard(theBoard)
     print('Turn for player ' + turn + '. Move on which space?')
     move = input()
@@ -99,3 +99,44 @@ print(' - Cups           ' + str(totalBrought(allGuests, 'cups')))
 print(' - Cakes          ' + str(totalBrought(allGuests, 'cakes')))
 print(' - Ham Sandwiches ' + str(totalBrought(allGuests, 'ham sandwiches')))
 print(' - Apple Pies     ' + str(totalBrought(allGuests, 'apple pies')))
+
+###########################################
+"""
+Function to list adventurer's inventory, including total
+"""
+inventory = {
+    'rope': 1,
+    'torch': 6,
+    'gold coin': 42,
+    'dagger': 1,
+    'arrow': 12
+}
+
+def displayinventory(inventory):
+    print('Inventory: ')
+    item_total = 0
+    for k, v in inventory.items():
+        item_total = item_total + v
+        print(str(v) + " " + str(k))
+    print("Total number of items: " + str(item_total))
+
+displayinventory(inventory)
+
+#############################################
+
+"""
+Function to add an inventory of a dragon
+to the adventurer's existing inventory
+"""
+def addToInventory(inventory, addedItems):
+    # initialise total items variable, to increment each time
+    for k in addedItems:
+        if inventory.get(k, 0) > 0:
+            inventory[k] = inventory[k] + 1
+        else:
+            inventory.setdefault(k, 1)
+
+inv = {'gold coin': 42, 'rope': 1}
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+addToInventory(inv, dragonLoot)
+displayinventory(inv)
